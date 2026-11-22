@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom",
+      "node"
+    ]
+  },
+  "include": [
+    "src/publico",
+    "src/PainelSimples.tsx",
+    "src/vite-env.d.ts",
+    "src/testes/publico.test.ts",
+    "src/testes/preparar.ts"
+  ]
+}

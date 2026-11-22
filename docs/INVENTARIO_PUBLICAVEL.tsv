@@ -1,0 +1,48 @@
+arquivo	finalidade
+.gitignore	Documentação e controle de publicação
+api/__init__.py	Código, testes e dependências da versão pública
+api/dados_referencia/contorno_ba.geojson	Dados públicos agregados e malhas
+api/dados_referencia/malha_macrorregioes.geojson	Dados públicos agregados e malhas
+api/dados_referencia/malha_municipios.geojson	Dados públicos agregados e malhas
+api/dados_referencia/malha_regioes.geojson	Dados públicos agregados e malhas
+api/estatistica_local.py	Código, testes e dependências da versão pública
+docs/INVENTARIO_PUBLICAVEL.tsv	Documentação e controle de publicação
+docs/README.md	Documentação e controle de publicação
+docs/SEGURANCA.md	Documentação e controle de publicação
+publicacao/arquivos.json	Documentação e controle de publicação
+pyproject.toml	Código, testes e dependências da versão pública
+scripts/publico/conferir_repositorio.py	Código, testes e dependências da versão pública
+scripts/publico/exportar_publico.py	Código, testes e dependências da versão pública
+scripts/publico/gerar_paridade.py	Código, testes e dependências da versão pública
+scripts/publico/guarda_publico.py	Código, testes e dependências da versão pública
+scripts/publico/publicar_pages.sh	Código, testes e dependências da versão pública
+uv.lock	Código, testes e dependências da versão pública
+web/package-lock.json	Código, testes e dependências da versão pública
+web/package.json	Código, testes e dependências da versão pública
+web/publico/estatico/_headers	Dados públicos agregados e malhas
+web/publico/estatico/dados/malha_contorno.geojson	Dados públicos agregados e malhas
+web/publico/estatico/dados/malha_macrorregioes.geojson	Dados públicos agregados e malhas
+web/publico/estatico/dados/malha_municipios.geojson	Dados públicos agregados e malhas
+web/publico/estatico/dados/malha_regioes.geojson	Dados públicos agregados e malhas
+web/publico/estatico/dados/observatorio.json	Dados públicos agregados e malhas
+web/publico/estatico/robots.txt	Dados públicos agregados e malhas
+web/publico/headers.txt	Código, testes e dependências da versão pública
+web/publico/index.html	Código, testes e dependências da versão pública
+web/src/PainelSimples.tsx	Código, testes e dependências da versão pública
+web/src/api/cliente.ts	Código, testes e dependências da versão pública
+web/src/api/tipos.ts	Código, testes e dependências da versão pública
+web/src/componentes/basicos.tsx	Código, testes e dependências da versão pública
+web/src/estado/filtros.ts	Código, testes e dependências da versão pública
+web/src/estilos.css	Código, testes e dependências da versão pública
+web/src/mapa/MapaTerritorial.tsx	Código, testes e dependências da versão pública
+web/src/mapa/geo.ts	Código, testes e dependências da versão pública
+web/src/publico/agregar.ts	Código, testes e dependências da versão pública
+web/src/publico/main.tsx	Código, testes e dependências da versão pública
+web/src/publico/useDadosPublicos.ts	Código, testes e dependências da versão pública
+web/src/simples.css	Código, testes e dependências da versão pública
+web/src/testes/preparar.ts	Código, testes e dependências da versão pública
+web/src/testes/publico.test.ts	Código, testes e dependências da versão pública
+web/src/vite-env.d.ts	Código, testes e dependências da versão pública
+web/tsconfig.publico.json	Código, testes e dependências da versão pública
+web/vite.portfolio.config.ts	Código, testes e dependências da versão pública
+web/vite.publico.config.ts	Código, testes e dependências da versão pública
