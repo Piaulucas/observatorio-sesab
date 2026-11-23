@@ -1,6 +1,6 @@
 # Observatório SESAB
 
-**Rascunho para coautoria com Lucas Piau.** A origem pessoal e a formulação da hipótese ainda serão revisadas pelo autor.
+Documentação técnica complementar à [apresentação do projeto](../README.md).
 
 [Ver a demonstração pública](https://observatorio-sesab.pages.dev/)
 
@@ -8,9 +8,7 @@
 
 O projeto reúne pesquisa documental e análise de dados sobre empresas e bases vinculadas ao Credenciamento SESAB nº 002/2013, de remoção terrestre em ambulância na Bahia. A construção local evoluiu de identificação de bases e regras de vínculo de pagamentos para um painel com séries, mapa e ranking.
 
-A pergunta proposta para orientar a apresentação é: **como a ampliação do cadastro de empresas se relaciona com a distribuição territorial e financeira dos pagamentos observados?** Uma hipótese a investigar é se mais empresas documentadas acompanharam o crescimento dos recursos ou uma redistribuição entre prestadores. Isso é uma hipótese de trabalho, não uma conclusão demonstrada pelo painel.
-
-**Para escrevermos juntos:** qual situação concreta levou à investigação? A pergunta acima corresponde à sua hipótese inicial? Qual foi sua participação em cada etapa e como o uso de assistência de IA deve ser descrito? Estas respostas substituirão este parágrafo; nenhuma motivação pessoal foi presumida.
+A pergunta que orienta o projeto é: **como a ampliação do cadastro de empresas se relaciona com a distribuição territorial e financeira dos pagamentos observados?** Uma hipótese a investigar é se mais empresas documentadas acompanharam o crescimento dos recursos ou uma redistribuição entre prestadores. Isso é uma hipótese de trabalho, não uma conclusão demonstrada pelo painel.
 
 ## O que o painel permite explorar
 
@@ -60,4 +58,4 @@ Para desenvolver o exportador, `uv sync` instala o ambiente Python registrado em
 
 O versionamento usa lista explícita de arquivos e bloqueia novos arquivos por padrão. Veja [a política de publicação](SEGURANCA.md) e [o inventário](INVENTARIO_PUBLICAVEL.tsv).
 
-O README técnico original foi preservado no computador e não é enviado. Este rascunho fica em `docs/README.md`, que o GitHub pode apresentar como página inicial do repositório. As próximas etapas editoriais são confirmar a origem, ajustar a hipótese com o autor e escolher quais dificuldades e aprendizados reais contar. Não há postagem de LinkedIn neste pacote.
+O README técnico original foi preservado no computador e não é enviado. A apresentação do projeto está no [README da raiz](../README.md); este documento preserva os detalhes técnicos da versão pública.

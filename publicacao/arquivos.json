@@ -1,5 +1,6 @@
 [
   ".gitignore",
+  "README.md",
   "api/__init__.py",
   "api/dados_referencia/contorno_ba.geojson",
   "api/dados_referencia/malha_macrorregioes.geojson",

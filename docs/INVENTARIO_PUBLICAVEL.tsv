@@ -1,5 +1,6 @@
 arquivo	finalidade
 .gitignore	Documentação e controle de publicação
+README.md	Apresentação técnica do projeto
 api/__init__.py	Código, testes e dependências da versão pública
 api/dados_referencia/contorno_ba.geojson	Dados públicos agregados e malhas
 api/dados_referencia/malha_macrorregioes.geojson	Dados públicos agregados e malhas
