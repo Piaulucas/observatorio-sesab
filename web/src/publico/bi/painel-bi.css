@@ -298,13 +298,24 @@ small {
   color: var(--ink);
   font-size: 11px;
 }
+.legenda .autoria {
+  display: block;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.legenda .autoria a {
+  color: var(--blue);
+  white-space: nowrap;
+}
 .legenda {
   position: absolute;
   left: 24px;
   bottom: 18px;
   font-size: 11px;
   color: var(--muted);
-  max-width: calc(100% - 48px);
+  width: var(--quadro);
+  line-height: 1.5;
 }
 .voltar-mapa {
   position: absolute;
@@ -678,6 +689,7 @@ small {
   .legenda {
     position: static;
     margin: 12px 4px 0;
+    width: auto;
     max-width: none;
     font-size: 10px;
   }

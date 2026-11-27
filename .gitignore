@@ -18,6 +18,7 @@
 !/web/src/testes/
 !/web/publico/estatico/dados/
 !/.gitignore
+!/LICENSE
 !/README.md
 !/api/__init__.py
 !/api/dados_referencia/contorno_ba.geojson
