@@ -36,16 +36,16 @@ def conferir():
     d = json.loads(arquivos['web/publico/estatico/dados/observatorio.json'])
     assert set(d) == {'formato','politica','cobertura','selecao','bases','beneficiarios','pagamentos','opcoes','snapshot_sha256'}
     assert d['formato'] == 'observatorio-publico-v1'
-    assert d['politica'] == 'selecao-estatistica-conservadora-v1'
+    assert d['politica'] == 'aprovados-validacao-v1'
     assert set(d['cobertura']) == {'inicio','fim','snapshot_em','fonte','fonte_url','observacao','fonte_adquirida_em','publicado_em'}
-    assert set(d['selecao']) == {'importados','incluidos','excluidos','centavos_excluidos','motivos_sobrepostos'}
+    assert set(d['selecao']) == {'importados','incluidos','incluidos_no_periodo','excluidos','centavos_excluidos','motivos_sobrepostos'}
     assert set(d['opcoes']) == {'macrorregioes','empresas','municipios','regioes'}
     for opcoes in d['opcoes'].values():
         for opcao in opcoes:
             assert set(opcao) in ({'id','nome'}, {'cnpj','nome'})
     territorio = {'cod_ibge','municipio_ibge','uf','uf_origem','regiao_id','regiao','macro_id','macro','situacao_geografica'}
     for b in d['bases']:
-        assert set(b) == {'cnpj','nome','municipio','territorio','primeiro_ato'}
+        assert set(b) == {'cnpj','nome','nome_exibicao','municipio','territorio','primeiro_ato'}
         assert set(b['territorio']) == territorio
     for b in d['beneficiarios']:
         assert set(b) == {'cnpj','nome'}
@@ -54,12 +54,12 @@ def conferir():
     chaves = []
     for p in d['pagamentos']:
         assert set(p) == {'cnpj','ano','centavos','n'}
-        assert type(p['ano']) is int and 2019 <= p['ano'] <= 2026
+        assert type(p['ano']) is int and 2023 <= p['ano'] <= 2026
         assert type(p['centavos']) is int and p['centavos'] >= 0
         assert type(p['n']) is int and p['n'] > 0
         chaves.append((p['cnpj'], p['ano']))
     assert len(chaves) == len(set(chaves)), 'Agregado duplicado'
-    assert sum(p['n'] for p in d['pagamentos']) == d['selecao']['incluidos']
+    assert sum(p['n'] for p in d['pagamentos']) == d['selecao']['incluidos_no_periodo']
     print(json.dumps({'resultado':'aprovado','arquivos':len(arquivos),'bases':len(d['bases']),
         'agregados':len(d['pagamentos']),'pagamentos_selecionados':sum(p['n'] for p in d['pagamentos']),
         'centavos':sum(p['centavos'] for p in d['pagamentos']),

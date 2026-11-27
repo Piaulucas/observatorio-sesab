@@ -6,7 +6,9 @@ api/dados_referencia/contorno_ba.geojson	Dados públicos agregados e malhas
 api/dados_referencia/malha_macrorregioes.geojson	Dados públicos agregados e malhas
 api/dados_referencia/malha_municipios.geojson	Dados públicos agregados e malhas
 api/dados_referencia/malha_regioes.geojson	Dados públicos agregados e malhas
+api/dados_referencia/nomes_exibicao.csv	Dados públicos agregados e malhas
 api/estatistica_local.py	Código, testes e dependências da versão pública
+api/nomes.py	Código, testes e dependências da versão pública
 docs/INVENTARIO_PUBLICAVEL.tsv	Documentação e controle de publicação
 docs/README.md	Documentação e controle de publicação
 docs/SEGURANCA.md	Documentação e controle de publicação
@@ -32,18 +34,25 @@ web/publico/index.html	Código, testes e dependências da versão pública
 web/src/PainelSimples.tsx	Código, testes e dependências da versão pública
 web/src/api/cliente.ts	Código, testes e dependências da versão pública
 web/src/api/tipos.ts	Código, testes e dependências da versão pública
+web/src/componentes/Simbolos.tsx	Código, testes e dependências da versão pública
 web/src/componentes/basicos.tsx	Código, testes e dependências da versão pública
 web/src/estado/filtros.ts	Código, testes e dependências da versão pública
 web/src/estilos.css	Código, testes e dependências da versão pública
 web/src/mapa/MapaTerritorial.tsx	Código, testes e dependências da versão pública
 web/src/mapa/geo.ts	Código, testes e dependências da versão pública
 web/src/publico/agregar.ts	Código, testes e dependências da versão pública
+web/src/publico/bi/MapaBI.tsx	Código e testes do painel BI público aprovado
+web/src/publico/bi/PainelBI.tsx	Código e testes do painel BI público aprovado
+web/src/publico/bi/modelo.ts	Código e testes do painel BI público aprovado
+web/src/publico/bi/painel-bi.css	Código e testes do painel BI público aprovado
 web/src/publico/main.tsx	Código, testes e dependências da versão pública
 web/src/publico/useDadosPublicos.ts	Código, testes e dependências da versão pública
 web/src/simples.css	Código, testes e dependências da versão pública
+web/src/testes/painel-bi.test.tsx	Código e testes do painel BI público aprovado
 web/src/testes/preparar.ts	Código, testes e dependências da versão pública
 web/src/testes/publico.test.ts	Código, testes e dependências da versão pública
 web/src/vite-env.d.ts	Código, testes e dependências da versão pública
 web/tsconfig.publico.json	Código, testes e dependências da versão pública
 web/vite.portfolio.config.ts	Código, testes e dependências da versão pública
 web/vite.publico.config.ts	Código, testes e dependências da versão pública
+web/vitest.publico.config.ts	Código, testes e dependências da versão pública

@@ -24,6 +24,7 @@
     "src/PainelSimples.tsx",
     "src/vite-env.d.ts",
     "src/testes/publico.test.ts",
-    "src/testes/preparar.ts"
+    "src/testes/preparar.ts",
+    "src/testes/painel-bi.test.tsx"
   ]
 }
