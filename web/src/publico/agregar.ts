@@ -14,7 +14,7 @@ export interface Territorio {
   macro: string | null;
   situacao_geografica?: string | null;
 }
-export interface BasePublica { cnpj: string; nome: string; municipio: string | null; territorio: Territorio; primeiro_ato: string | null }
+export interface BasePublica { cnpj: string; nome: string; nome_exibicao?: string; municipio: string | null; territorio: Territorio; primeiro_ato: string | null }
 export interface PagamentoAnual { cnpj: string; ano: number; centavos: number; n: number }
 export interface DadosPublicos {
   formato: "observatorio-publico-v1";

@@ -25,6 +25,8 @@
 !/api/dados_referencia/malha_municipios.geojson
 !/api/dados_referencia/malha_regioes.geojson
 !/api/estatistica_local.py
+!/api/dados_referencia/nomes_exibicao.csv
+!/api/nomes.py
 !/docs/INVENTARIO_PUBLICAVEL.tsv
 !/docs/README.md
 !/docs/SEGURANCA.md
@@ -51,6 +53,7 @@
 !/web/src/api/cliente.ts
 !/web/src/api/tipos.ts
 !/web/src/componentes/basicos.tsx
+!/web/src/componentes/Simbolos.tsx
 !/web/src/estado/filtros.ts
 !/web/src/estilos.css
 !/web/src/mapa/MapaTerritorial.tsx
@@ -65,6 +68,15 @@
 !/web/tsconfig.publico.json
 !/web/vite.portfolio.config.ts
 !/web/vite.publico.config.ts
+!/web/vitest.publico.config.ts
+
+# Painel BI aprovado, fontes e testes revisados localmente.
+!/web/src/publico/bi/
+!/web/src/publico/bi/MapaBI.tsx
+!/web/src/publico/bi/PainelBI.tsx
+!/web/src/publico/bi/modelo.ts
+!/web/src/publico/bi/painel-bi.css
+!/web/src/testes/painel-bi.test.tsx
 
 # Defesa adicional para segredos, backups e artefatos locais.
 **/.env

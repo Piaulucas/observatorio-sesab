@@ -8,7 +8,9 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:publico": "vitest run --config vitest.publico.config.ts",
+    "build:publico": "tsc --noEmit -p tsconfig.publico.json && vite build --config vite.publico.config.ts"
   },
   "dependencies": {
     "maplibre-gl": "4.7.1",
