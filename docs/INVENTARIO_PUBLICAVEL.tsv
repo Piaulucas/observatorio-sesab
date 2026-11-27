@@ -30,6 +30,7 @@ web/publico/estatico/dados/malha_macrorregioes.geojson	Dados públicos agregados
 web/publico/estatico/dados/malha_municipios.geojson	Dados públicos agregados e malhas
 web/publico/estatico/dados/malha_regioes.geojson	Dados públicos agregados e malhas
 web/publico/estatico/dados/observatorio.json	Dados públicos agregados e malhas
+web/publico/estatico/og-observatorio.png	Imagem de pré-visualização do link do painel
 web/publico/estatico/robots.txt	Dados públicos agregados e malhas
 web/publico/headers.txt	Código, testes e dependências da versão pública
 web/publico/index.html	Código, testes e dependências da versão pública

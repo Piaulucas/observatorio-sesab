@@ -6,7 +6,8 @@ PROIBIDOS = [r'admin-api', r'/admin/', r'AdminApp', r'Central de Pend', r'estati
              r'postgres', r'psycopg', r'5432', r'5433', r'senha', r'\.pgpass', r'rastro_selecao',
              r'numero_pagamento', r'arquivo_origem', r'cpf', r'orca/', r'/Users/']
 PERMITIDOS = {'index.html', '_headers', 'robots.txt', 'dados/observatorio.json', 'dados/malha_macrorregioes.geojson',
-              'dados/malha_regioes.geojson', 'dados/malha_municipios.geojson', 'dados/malha_contorno.geojson'}
+              'dados/malha_regioes.geojson', 'dados/malha_municipios.geojson', 'dados/malha_contorno.geojson',
+              'og-observatorio.png'}
 CHAVES_DADOS = {'formato', 'politica', 'cobertura', 'selecao', 'bases', 'beneficiarios', 'pagamentos', 'opcoes', 'snapshot_sha256'}
 
 
