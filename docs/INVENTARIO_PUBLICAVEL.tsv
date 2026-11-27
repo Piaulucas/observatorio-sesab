@@ -12,6 +12,7 @@ api/nomes.py	Código, testes e dependências da versão pública
 docs/INVENTARIO_PUBLICAVEL.tsv	Documentação e controle de publicação
 docs/README.md	Documentação e controle de publicação
 docs/SEGURANCA.md	Documentação e controle de publicação
+docs/imagens/painel.png	Imagem do painel público usada na apresentação
 publicacao/arquivos.json	Documentação e controle de publicação
 pyproject.toml	Código, testes e dependências da versão pública
 scripts/publico/conferir_repositorio.py	Código, testes e dependências da versão pública

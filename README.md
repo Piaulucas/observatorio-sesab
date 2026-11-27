@@ -4,6 +4,10 @@
 
 [**Acessar dashboard interativo**](https://observatorio-sesab.pages.dev/)
 
+[![Painel do Observatório SESAB: mapa da Bahia com as bases credenciadas, totais de 2023–2026 e ranking de empresas](docs/imagens/painel.png)](https://observatorio-sesab.pages.dev/)
+
+<sub>Retrato de 27 de novembro de 2026. Os números do site podem mudar a cada atualização.</sub>
+
 ## Sobre o projeto
 
 O Observatório SESAB é um projeto independente de análise e visualização de dados públicos relacionados ao Credenciamento SESAB nº 002/2013.
@@ -19,39 +23,38 @@ A proposta é transformar informações dispersas em fontes públicas em um pain
 
 ## Dashboard interativo
 
-O painel permite explorar os dados de forma geral ou filtrada, com atualização conjunta dos indicadores, gráficos, mapa e ranking.
+O painel permite explorar os dados de forma geral ou filtrada, com atualização conjunta dos indicadores, do mapa e do ranking.
 
 **Principais funcionalidades:**
 
-- Evolução histórica das empresas e bases credenciadas.
-- Evolução anual dos pagamentos.
-- Distribuição geográfica por município e macrorregião.
+- Mapa da Bahia com as bases credenciadas por município e as macrorregiões de saúde.
+- Filtros por ano, macrorregião e empresa.
 - Ranking de empresas por valores recebidos.
-- Participação percentual nos pagamentos selecionados.
-- Filtros por período, região, município e empresa.
-- Consulta ao histórico financeiro dos prestadores.
+- Lista de bases por cidade.
+- Detalhe de cada base, com nome fantasia, razão social, CNPJ e data de credenciamento, quando documentada.
 - Identificação das bases localizadas fora da Bahia.
 
 A interface foi desenvolvida para priorizar a leitura imediata dos dados, com detalhamento disponível conforme o interesse do usuário.
 
 ## Dados disponíveis
 
-O retrato público inicial reúne:
+O retrato publicado cobre **2023–2026**, como o Painel de Pagamentos do Portal da Transparência da Bahia, e reúne:
 
 | Indicador | Quantidade |
 |---|---:|
-| Empresas identificadas | 40 |
-| Bases cadastradas | 49 |
+| Empresas cadastradas | 41 |
+| Empresas com pagamento aprovado no período | 36 |
+| Bases cadastradas | 50 |
 | Municípios identificados | 26 |
-| Pagamentos selecionados | 1.775 |
-| Valor total identificado | R$ 363.289.297,77 |
-| Período dos pagamentos | 2019–2026 |
+| Pagamentos aprovados | 1.114 |
+| Valor aprovado | R$ 282.758.196,74 |
+| Período dos pagamentos | 2023–2026 |
 
-*Os números correspondem à seleção estatística publicada, não à totalidade dos pagamentos da SESAB. O ano de 2026 está incompleto.*
+*Somam somente os pagamentos aprovados na conferência; os que aguardam revisão e os excluídos ficam de fora. O valor é o de remoção do Credenciamento 002/2013, menor que o total por recebedor no portal, que não separa credenciamento. O ano de 2026 está incompleto.*
 
 Cada base é identificada pelo CNPJ completo. As empresas são agrupadas pela raiz de oito dígitos do CNPJ, sem presumir grupo econômico ou vínculos entre pessoas jurídicas distintas. Os filtros territoriais associam pagamentos às bases somente pelo CNPJ completo.
 
-A cópia pública contém 128 agregados de pagamentos por CNPJ e ano, correspondentes aos 1.775 lançamentos selecionados.
+A cópia pública contém 100 agregados de pagamentos por CNPJ e ano, correspondentes aos 1.114 pagamentos aprovados.
 
 ## Fontes de dados
 
@@ -62,7 +65,7 @@ O Observatório utiliza informações de fontes oficiais, incluindo:
 - Secretaria da Saúde do Estado da Bahia (PDR 2026) — informações territoriais e regionalização da saúde.
 - Instituto Brasileiro de Geografia e Estatística (IBGE) — dados e malhas geográficas. As malhas derivadas publicadas estão separadas dos dados financeiros.
 
-A versão inicial utiliza uma cópia dos dados financeiros obtida em 6 de novembro de 2026, com importação registrada em 9 de novembro de 2026 e pagamentos identificados entre 7 de fevereiro de 2019 e 28 de outubro de 2026.
+A versão atual utiliza uma cópia dos dados financeiros obtida em 6 de novembro de 2026, com pagamentos de janeiro de 2023 a 28 de outubro de 2026.
 
 Os pagamentos são apresentados pelo ano de efetivação, independentemente do período em que o serviço foi realizado.
 
@@ -71,7 +74,7 @@ Os pagamentos são apresentados pelo ano de efetivação, independentemente do p
 | Camada | Tecnologias |
 |---|---|
 | Interface | React, TypeScript e Vite |
-| Visualização geográfica | MapLibre |
+| Visualização geográfica | SVG com malhas do IBGE |
 | Tratamento e exportação | Python |
 | Armazenamento no ambiente de desenvolvimento | PostgreSQL |
 | Publicação | Cloudflare Pages |
@@ -87,9 +90,8 @@ Na pasta `web`:
 
 ```bash
 npm ci
-npx tsc -p tsconfig.publico.json
-npx vitest run --config vite.portfolio.config.ts
-npx vite build --config vite.publico.config.ts
+npm run test:publico
+npm run build:publico
 npx vite preview --config vite.publico.config.ts
 ```
 
@@ -97,7 +99,7 @@ A versão pública poderá ser acessada em:
 
 `http://127.0.0.1:4180/`
 
-Os arquivos em `web/publico/estatico` são uma cópia agregada fixa, incluída para reprodução sem banco ou credenciais. Use os comandos acima: os scripts legados de `web/package.json` pertencem ao ambiente local completo.
+Os arquivos em `web/publico/estatico` são uma cópia agregada fixa, incluída para reprodução sem banco ou credenciais. Use os comandos acima: os demais scripts de `web/package.json` pertencem ao ambiente local completo.
 
 Para conferir a saída, a partir da raiz, com Python:
 
@@ -105,7 +107,7 @@ Para conferir a saída, a partir da raiz, com Python:
 python3 scripts/publico/guarda_publico.py web/dist-publico
 ```
 
-Para desenvolver o exportador, `uv sync` instala o ambiente Python registrado em `pyproject.toml` e `uv.lock`. A exportação de uma nova cópia exige um snapshot privado previamente revisado, que não é distribuído. O teste de paridade Python/TypeScript depende de arquivos externos e é pulado quando eles não são fornecidos; os testes sintéticos não precisam desses arquivos.
+Para desenvolver o exportador, `uv sync` instala o ambiente Python registrado em `pyproject.toml` e `uv.lock`. A exportação de uma nova cópia exige um snapshot privado de pagamentos aprovados, que não é distribuído. O teste de paridade Python/TypeScript depende de arquivos externos e é pulado quando eles não são fornecidos; os testes sintéticos não precisam desses arquivos.
 
 O ambiente administrativo, a API administrativa, as migrações, o pipeline histórico, os backups e os arquivos históricos de trabalho não integram esta publicação.
 
@@ -115,11 +117,11 @@ O Observatório realiza análise estatística de dados públicos. Não constitui
 
 Algumas considerações relevantes:
 
-- Os valores representam registros selecionados conforme critérios documentados de associação ao credenciamento. Pendências e exclusões não entram automaticamente nos totais.
+- Os totais representam somente pagamentos aprovados conforme critérios de associação ao credenciamento. Pagamentos que aguardam revisão e excluídos não entram.
 - O mapa utiliza o município cadastral das bases, não os locais individuais de realização dos atendimentos, e não demonstra cobertura assistencial.
-- A evolução acumulada dos credenciamentos depende das datas documentais disponíveis e não representa necessariamente o número de empresas em atividade em cada ano.
+- O cadastro de bases é o atual e depende das datas documentais disponíveis; não representa necessariamente as empresas em atividade em cada ano.
 - Os valores são nominais, sem atualização monetária.
-- A disponibilidade de registros pode variar entre períodos. Ausência de pagamento selecionado não demonstra ausência de serviço.
+- A disponibilidade de registros pode variar entre períodos. Ausência de pagamento aprovado não demonstra ausência de serviço.
 - A relação entre crescimento de empresas e evolução dos pagamentos permite investigar tendências, mas não estabelece causalidade automaticamente.
 
 ## Próximas evoluções

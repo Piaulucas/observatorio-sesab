@@ -30,6 +30,8 @@
 !/docs/INVENTARIO_PUBLICAVEL.tsv
 !/docs/README.md
 !/docs/SEGURANCA.md
+!/docs/imagens/
+!/docs/imagens/painel.png
 !/publicacao/arquivos.json
 !/pyproject.toml
 !/scripts/publico/conferir_repositorio.py
