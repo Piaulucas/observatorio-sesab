@@ -82,35 +82,6 @@ Os pagamentos são apresentados pelo ano de efetivação, independentemente do p
 
 A versão pública é estática. Um exportador Python copia campos permitidos e agrega pagamentos por CNPJ e ano, com conferência da soma em centavos. O navegador calcula os filtros sobre esse JSON, sem acesso direto ao PostgreSQL ou à aplicação administrativa.
 
-## Executando localmente
-
-Requisitos: Node.js e npm.
-
-Na pasta `web`:
-
-```bash
-npm ci
-npm run test:publico
-npm run build:publico
-npx vite preview --config vite.publico.config.ts
-```
-
-A versão pública poderá ser acessada em:
-
-`http://127.0.0.1:4180/`
-
-Os arquivos em `web/publico/estatico` são uma cópia agregada fixa, incluída para reprodução sem banco ou credenciais. Use os comandos acima: os demais scripts de `web/package.json` pertencem ao ambiente local completo.
-
-Para conferir a saída, a partir da raiz, com Python:
-
-```bash
-python3 scripts/publico/guarda_publico.py web/dist-publico
-```
-
-Para desenvolver o exportador, `uv sync` instala o ambiente Python registrado em `pyproject.toml` e `uv.lock`. A exportação de uma nova cópia exige um snapshot privado de pagamentos aprovados, que não é distribuído. O teste de paridade Python/TypeScript depende de arquivos externos e é pulado quando eles não são fornecidos; os testes sintéticos não precisam desses arquivos.
-
-O ambiente administrativo, a API administrativa, as migrações, o pipeline histórico, os backups e os arquivos históricos de trabalho não integram esta publicação.
-
 ## Metodologia e limitações
 
 O Observatório realiza análise estatística de dados públicos. Não constitui auditoria financeira individual nem ferramenta oficial da SESAB.
@@ -133,20 +104,6 @@ O projeto permanece em desenvolvimento, com melhorias previstas para:
 - Refinamento da classificação dos pagamentos.
 - Melhorias de visualização e interação.
 - Acompanhamento da distribuição territorial e financeira ao longo do tempo.
-
-## Código e transparência
-
-Este repositório disponibiliza uma seleção revisada do código da versão pública: interface, agregação em Python e TypeScript, exportação, guarda do pacote e testes.
-
-Os dados operacionais, credenciais, arquivos privados e componentes administrativos são mantidos fora do repositório. O versionamento usa uma lista explícita de arquivos e bloqueia novos arquivos por padrão.
-
-Consulte a [documentação técnica complementar](docs/README.md), a [política de publicação](docs/SEGURANCA.md) e o [inventário dos arquivos publicados](docs/INVENTARIO_PUBLICAVEL.tsv).
-
-Para conferir a seleção de arquivos, a partir da raiz:
-
-```bash
-python3 scripts/publico/conferir_repositorio.py
-```
 
 ---
 
