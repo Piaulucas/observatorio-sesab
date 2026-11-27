@@ -2,10 +2,26 @@
 import hashlib
 import json
 import re
+import struct
 import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+# Únicos binários aceitos: imagens da apresentação, sem metadados de texto ou câmera.
+IMAGENS = {'docs/imagens/painel.png'}
+BLOCOS_PNG = {b'IHDR', b'PLTE', b'IDAT', b'IEND', b'tRNS', b'gAMA', b'cHRM', b'sRGB', b'sBIT', b'pHYs', b'iCCP'}
+
+
+def conferir_png(nome, bruto):
+    assert bruto[:8] == b'\x89PNG\r\n\x1a\n' and len(bruto) <= 2_000_000, 'Imagem inválida ou grande demais: ' + nome
+    i, bloco = 8, None
+    while i < len(bruto):
+        tamanho, bloco = struct.unpack('>I4s', bruto[i:i + 8])
+        assert bloco in BLOCOS_PNG, 'Imagem com metadados não permitidos: ' + nome
+        i += 12 + tamanho
+    assert i == len(bruto) and bloco == b'IEND', 'Imagem com conteúdo após o fim: ' + nome
 
 
 def conferir():
@@ -30,6 +46,9 @@ def conferir():
     for nome, bruto in arquivos.items():
         assert not (ROOT / nome).is_symlink(), 'Atalho local não permitido'
         assert (ROOT / nome).read_bytes() == bruto, 'Índice desatualizado: ' + nome
+        if nome in IMAGENS:
+            conferir_png(nome, bruto)
+            continue
         texto = bruto.decode('utf-8')
         for padrao in padroes:
             assert not re.search(padrao, texto), 'Revisar padrão sensível em: ' + nome
