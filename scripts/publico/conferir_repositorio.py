@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 # Únicos binários aceitos: imagens da apresentação, sem metadados de texto ou câmera.
-IMAGENS = {'docs/imagens/painel.png'}
+IMAGENS = {'docs/imagens/painel.png', 'web/publico/estatico/og-observatorio.png'}
 BLOCOS_PNG = {b'IHDR', b'PLTE', b'IDAT', b'IEND', b'tRNS', b'gAMA', b'cHRM', b'sRGB', b'sBIT', b'pHYs', b'iCCP'}
 
 

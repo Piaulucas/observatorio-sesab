@@ -50,6 +50,7 @@
 !/web/publico/estatico/dados/malha_regioes.geojson
 !/web/publico/estatico/dados/observatorio.json
 !/web/publico/estatico/robots.txt
+!/web/publico/estatico/og-observatorio.png
 !/web/publico/headers.txt
 !/web/publico/index.html
 !/web/src/PainelSimples.tsx
