@@ -105,10 +105,14 @@ O projeto permanece em desenvolvimento, com melhorias previstas para:
 - Melhorias de visualização e interação.
 - Acompanhamento da distribuição territorial e financeira ao longo do tempo.
 
+## Licença
+
+O código deste repositório está sob a [licença MIT](LICENSE). A licença não se estende aos dados, às malhas geográficas e aos documentos de terceiros, que seguem as condições das respectivas fontes.
+
 ---
 
 **Projeto independente, sem vínculo institucional com o Governo do Estado da Bahia ou com a SESAB.**
 
-Desenvolvido por Lucas Piau.
+Desenvolvido por Lucas Almeida Piau Santana.
 
 [**Explorar o Observatório SESAB**](https://observatorio-sesab.pages.dev/)

@@ -425,10 +425,16 @@ export function PainelCarregado({ dados, municipios, macros }: Recursos) {
             </button>
           )}
           <p className="legenda">
-            Malha IBGE · PDR 2026. Tamanho da bolha = nº de bases no município.
-            Clique para ver as bases.
-            <br />
-            Clique fora, de novo na bolha, ou pressione Esc para voltar.
+            Bolha = bases por município do CNPJ.
+            <span className="autoria">
+              Projeto independente, sem vínculo com o Governo da Bahia ou a SESAB.
+              <br />
+              Criado por Lucas Almeida Piau Santana
+              <br />
+              <a href="https://github.com/Piaulucas/observatorio-sesab" target="_blank" rel="noopener noreferrer">
+                Código no GitHub
+              </a>
+            </span>
           </p>
         </section>
         <aside className="lado" aria-label="Empresas e bases">
@@ -519,18 +525,12 @@ export function PainelCarregado({ dados, municipios, macros }: Recursos) {
             )}
           </div>
           <footer className="fonte">
-            Fonte: {dados.cobertura.fonte}. Pagamentos{" "}
-            {dados.cobertura.inicio.split("-").reverse().join("/")}–
-            {dados.cobertura.fim.split("-").reverse().join("/")}{" "}
-            {anos.length
-              ? `(${anos.at(-1)} parcial).`
-              : "(sem pagamentos no recorte)."}{" "}
-            Município = cadastro do CNPJ da base. Cadastro atual não representa bases ativas ao longo do tempo.
-            <strong className="aviso-valor">
-              O observatório cobre 2023–2026, como o Painel de Pagamentos do Portal da Transparência. Somam só os
-              pagamentos aprovados de remoção do Credenciamento 002/2013; os que aguardam revisão não entram. Por isso o
-              valor é menor que o total por recebedor no portal.
-            </strong>
+            Fonte: {dados.cobertura.fonte}, até {dados.cobertura.fim.split("-").reverse().join("/")}{" "}
+            {anos.length ? `(${anos.at(-1)} parcial).` : "(sem pagamentos no recorte)."} Mapa: IBGE e PDR 2026.
+            <span className="aviso-valor">
+              O valor é menor que o total por recebedor no portal: soma só remoções aprovadas. Ainda há remoções em análise
+              para confirmar se pertencem ao credenciamento.
+            </span>
           </footer>
         </aside>
       </div>

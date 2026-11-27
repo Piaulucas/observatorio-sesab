@@ -1,4 +1,5 @@
 arquivo	finalidade
+LICENSE	Licença MIT do código
 .gitignore	Documentação e controle de publicação
 README.md	Apresentação técnica do projeto
 api/__init__.py	Código, testes e dependências da versão pública

@@ -132,7 +132,10 @@ describe("Painel BI — interações", () => {
     });
     expect(document.querySelector(".numero-bases")).toHaveTextContent("18");
     expect(screen.getByText(/menor que o total por recebedor no portal/)).toBeInTheDocument();
+    expect(screen.getByText(/Ainda há remoções em análise/)).toBeInTheDocument();
     expect(screen.getByText("Só aprovados de remoção do 002/2013")).toBeInTheDocument();
+    expect(screen.getByText(/Projeto independente, sem vínculo.*Criado por Lucas Almeida Piau Santana/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Código no GitHub" })).toHaveAttribute("href", "https://github.com/Piaulucas/observatorio-sesab");
     fireEvent.change(screen.getByLabelText("Empresa"), {
       target: { value: "32788063" },
     });
